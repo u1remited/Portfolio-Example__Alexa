@@ -1,0 +1,39 @@
+.button {
+    display: inline-block;
+    padding: 1rem;
+    background-color: var(--first-color);
+    color: #fff;
+    border-radius: .5rem;
+    font-weight: var(--font-medium);
+    &:hover {
+        background-color: var(--first-color-alt);
+    }
+    &_flex {
+        display: inline-flex;
+        align-items: center;
+    }
+    &_small {
+        padding: .75rem 1rem;
+    }
+    &_white {
+        background-color: #fff;
+        color: var(--first-color);
+        &:hover {
+            background-color: #fff;
+        }
+    }
+    &_link {
+        padding: 0;
+        background-color: transparent;
+        color: var(--first-color);
+        &:hover {
+            background-color: transparent;
+            color: var(--first-color-alt); 
+        }
+    }
+    &__icon {
+        font-size: 1.25rem;
+        margin-left: var(--mb-0-5);
+        transition: .3s;
+    }
+}

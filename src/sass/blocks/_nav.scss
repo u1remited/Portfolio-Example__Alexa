@@ -1,0 +1,122 @@
+.nav {
+    max-width: 968px;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo {
+        color: var(--title-color);
+        font-weight: var(--font-medium);
+        &:hover {
+            color: var(--first-color);
+        }
+    }
+    &__toggle {
+        color: var(--title-color);
+        font-weight: var(--font-medium);
+        font-size: 1.1rem;
+        cursor: pointer;
+        &:hover {
+            color: var(--first-color);
+        }
+    }
+    &__list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    &__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: var(--small-font-size);
+        font-weight: var(--font-medium);
+        color: var(--title-color);
+        &:hover {
+            color: var(--first-color);
+        }
+    }
+    &__icon {
+        font-size: 1.2rem;
+    }
+    &__close {
+        position: absolute;
+        right: 1.3rem;
+        bottom: .5rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--first-color);
+        &:hover {
+            color: var(--first-color-alt);
+        }
+    }
+    &__btns {
+        display: flex;
+        align-items: center;        
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .nav__menu {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--body-color);
+        padding: 2rem 1.5rem 4rem;
+        box-shadow: 0 -1px 4px rgba(0,0,0,.15);
+        border-radius: 1.5rem 1.5rem 0 0;
+        transition: .3s;
+    }
+}
+
+.show-menu {
+    bottom: 0;
+}
+
+.active-link {
+    color: var(--first-color);
+}
+
+.scroll-header {
+    box-shadow: 0 -1px 4px rgba(0,0,0,.15);
+}
+
+.change-theme {
+    font-size: 1.25rem;
+    color: var(--title-color);
+    margin-right: var(--mb-1);
+    cursor: pointer;
+    &:hover {
+        color: var(--first-color);
+    }
+}
+
+@media screen and (min-width: 767.98px) {
+    .nav {
+        height: calc(var(--header-height) + 1.5rem);
+        column-gap: 1rem;
+        &__icon {
+            display: none;
+        }
+        &__list {
+            display: flex;
+            column-gap: 2rem;     /* Don't work => change grid class instead */
+        }
+        &__close {
+            display: none;
+        }
+        &__toggle {
+            display: none;
+        }
+        &__menu {
+            margin-left: auto;
+        }
+        .change-theme {
+            margin: 0;
+        }
+        .grid {
+            display: flex;
+            column-gap: 2rem;          /*  <= just here */
+        }
+    }
+}
